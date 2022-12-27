@@ -12,7 +12,9 @@ class DolarToScrapeSpider(scrapy.Spider):
     def parse(self, response):
         for elemento in response.xpath("//table[@id='exchange_rates_1']"):
             yield {
-                'Dolar': elemento.xpath(".//td[@id='last_12_35']/text()").get(),
-                'Euro': elemento.xpath(".//td[@id='last_17_35']/text()").get(),  
+                'dolar': elemento.xpath(".//td[@id='last_12_35']/text()").get(),
+                'euro': elemento.xpath(".//td[@id='last_17_35']/text()").get(), 
+                'libra': elemento.xpath(".//td[@id='last_3_35']/text()").get(),
+                'iene': elemento.xpath(".//td[@id='last_2_35']/text()").get(),
             }
        
