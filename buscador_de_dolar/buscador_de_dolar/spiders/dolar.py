@@ -1,4 +1,6 @@
 import scrapy
+from datetime import datetime
+from utils.email_sender import Emailer
 
 class DolarToScrapeSpider(scrapy.Spider):
     name = 'valordolarbot'
@@ -18,3 +20,6 @@ class DolarToScrapeSpider(scrapy.Spider):
                 'iene': elemento.xpath(".//td[@id='last_2_35']/text()").get()
             }
        
+        email = Emailer('willdesenvolvedorweb@gmail.com', 'zbvevzyvabsikhdk' )
+        lista_de_contatos = ['willsantos.edf@gmail.com']
+        email.definir_conteudo('Cotações das moedas', 'willdesenvolvedorweb@gmail.com', lista_de_contatos,"Bom dia!\nSegue em anexo os valores atuais das cotações das moedas." )
