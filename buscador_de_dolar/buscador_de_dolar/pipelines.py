@@ -20,7 +20,7 @@ class SQLitePipeline(object):
 
     def process_item(self, item, spider):
         self.cursor.execute('''
-            INSERT OR INTO cotacao(dolar, euro, libra, iene) VALUES(?, ?, ?, ?)
+            INSERT OR IGNORE INTO cotacao(dolar, euro, libra, iene) VALUES(?, ?, ?, ?)
         ''',(
            item.get('dolar'),
            item.get('euro'),
