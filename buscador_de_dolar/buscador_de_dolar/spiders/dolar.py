@@ -1,6 +1,6 @@
 import scrapy
 from datetime import datetime
-from utils.email_sender import Emailer
+from utils.email_send import Emailer
 
 class DolarToScrapeSpider(scrapy.Spider):
     name = 'valordolarbot'
@@ -22,4 +22,7 @@ class DolarToScrapeSpider(scrapy.Spider):
        
         email = Emailer('willdesenvolvedorweb@gmail.com', 'zbvevzyvabsikhdk' )
         lista_de_contatos = ['willsantos.edf@gmail.com']
+        lista_de_arquivos = ['cotacao.csv']
         email.definir_conteudo('Cotações das moedas', 'willdesenvolvedorweb@gmail.com', lista_de_contatos,"Bom dia!\nSegue em anexo os valores atuais das cotações das moedas." )
+        email.anexar_arquivos(lista_de_arquivos)
+        email.enviar_email(30)
