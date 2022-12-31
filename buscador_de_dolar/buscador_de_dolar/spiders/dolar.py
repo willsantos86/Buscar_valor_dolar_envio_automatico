@@ -20,7 +20,7 @@ class DolarToScrapeSpider(scrapy.Spider):
                 'iene': elemento.xpath(".//td[@id='last_2_35']/text()").get()
             }
        
-        email = Emailer('*************@gmail.com', '***zbv***yva******k' )
+        email = Emailer('***********@gmail.com', '***zbv***yva******k' )
         lista_de_contatos = ['**********.edf@gmail.com']
         lista_de_arquivos = ['cotacao.csv']
         email.definir_conteudo('Cotações das moedas', '*************@gmail.com', lista_de_contatos,"Bom dia!\nSegue em anexo os valores atuais das cotações das moedas." )

@@ -50,7 +50,7 @@ class BuscarDolarSpider(scrapy.Spider):
             yield scrapy.Request(url=url,callback=self.parse,meta={'proximo_url':url})
 
     def parse(self, response):
-        driver,wait = iniciar_driver()
+        driver, wait = iniciar_driver()
         driver.get(response.meta['proximo_url'])
         response_webdriver = Selector(text=driver.page_source)
-      """
+      """ 

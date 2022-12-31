@@ -27,6 +27,7 @@ class SQLitePipeline(object):
            item.get('libra'),
            item.get('iene')
         ))
+        
         self.connection.commit()
         return item
         
